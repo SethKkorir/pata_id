@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNotify } from '../contexts/NotificationContext';
 import Button from '../components/Button';
-import EnhancedIDCard from '../components/EnhancedIDCard';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Input, Select } from '../components/Input';
+import { Input } from '../components/Input';
 import './SecurityDashboard.css';
 
 import { api } from '../utils/api';
@@ -19,7 +18,7 @@ const SecurityDashboard = () => {
     const [selectedReport, setSelectedReport] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const fetchReports = async () => {
+    const fetchReports = React.useCallback(async () => {
         try {
             setLoading(true);
             const campusFilter = (user?.campus && user.campus !== 'All Campuses') ? user.campus : '';
@@ -55,13 +54,13 @@ const SecurityDashboard = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [user, notifyError]);
 
     useEffect(() => {
         if (user) {
             fetchReports();
         }
-    }, [user]);
+    }, [user, fetchReports]);
 
     const handleVerify = (report) => {
         setSelectedReport(report);

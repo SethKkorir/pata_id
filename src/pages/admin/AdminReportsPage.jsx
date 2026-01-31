@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 import { Input, Select } from '../../components/Input';
-import EnhancedIDCard from '../../components/EnhancedIDCard';
+
 import './AdminStyles.css';
 
 import { api } from '../../utils/api';

@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('reports');
   const [filterStatus, setFilterStatus] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedItems, setSelectedItems] = useState([]);
+  const selectedItems = []; // Placeholder until selection is implemented
 
   const tabs = [
     { id: 'reports', label: 'All Reports', icon: '📋', count: 24 },

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { api } from '../utils/api';
 import './ClaimVerification.css';
-import Button, { ShieldIcon, UploadIcon, PlusIcon } from './Button';
-import EnhancedIDCard from './EnhancedIDCard';
+import Button, { ShieldIcon, UploadIcon } from './Button';
 import { Input } from './Input';
 import { useNotify } from '../contexts/NotificationContext';
 import { useAuth } from '../contexts/AuthContext';
@@ -19,7 +18,7 @@ const ClaimVerificationPage = () => {
   const [step, setStep] = useState(1);
   const [verificationMethod, setVerificationMethod] = useState('id_number');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
+  // isVerified state removed as it was unused except for assignment
 
   const [verificationData, setVerificationData] = useState({
     idNumber: '',
@@ -51,7 +50,7 @@ const ClaimVerificationPage = () => {
     };
 
     if (id) fetchReport();
-  }, [id]);
+  }, [id, notifyError]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -138,7 +137,7 @@ const ClaimVerificationPage = () => {
 
       if (response && response.success) {
         notifySuccess('Identity Verified!', 'Processing complete.');
-        setIsVerified(true);
+        // setIsVerified(true); // Removed as state is unused
         setStep(3);
       } else {
         throw new Error(response?.error || 'Verification failed');

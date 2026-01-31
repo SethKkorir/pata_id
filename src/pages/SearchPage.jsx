@@ -38,7 +38,7 @@ const SearchPage = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchResults = async (params = {}) => {
+  const fetchResults = React.useCallback(async (params = {}) => {
     setIsLoading(true);
     try {
       let queryString = '/reports/search?';
@@ -67,12 +67,12 @@ const SearchPage = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [notifyError]);
 
   // Fetch initial results
   React.useEffect(() => {
     fetchResults();
-  }, []);
+  }, [fetchResults]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -151,7 +151,9 @@ const SearchPage = () => {
       </div>
 
       <div className="results-grid">
-        {results.length > 0 ? (
+        {isLoading ? (
+          <p className="loading-text">Loading...</p>
+        ) : results.length > 0 ? (
           results.map(result => (
             <IDCard
               key={result.id}

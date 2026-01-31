@@ -13,6 +13,10 @@ export const useNotification = () => {
 export const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
 
+  const removeNotification = useCallback((id) => {
+    setNotifications(prev => prev.filter(notification => notification.id !== id));
+  }, []);
+
   const addNotification = useCallback((notification) => {
     const id = Date.now();
     const newNotification = {
@@ -29,11 +33,7 @@ export const NotificationProvider = ({ children }) => {
     }, 5000);
 
     return id;
-  }, []);
-
-  const removeNotification = useCallback((id) => {
-    setNotifications(prev => prev.filter(notification => notification.id !== id));
-  }, []);
+  }, [removeNotification]);
 
   const clearAllNotifications = useCallback(() => {
     setNotifications([]);
@@ -107,7 +107,7 @@ const NotificationToast = ({ notification, onClose }) => {
   const config = typeConfig[type] || typeConfig.info;
 
   return (
-    <div 
+    <div
       className="notification-toast"
       style={{
         backgroundColor: config.bgColor,
@@ -131,7 +131,7 @@ const NotificationToast = ({ notification, onClose }) => {
         )}
         {action && (
           <div className="notification-actions">
-            <button 
+            <button
               className="notification-action-btn"
               onClick={action.onClick}
               style={{ color: config.color }}
