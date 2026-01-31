@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  padding: 6rem 0 8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(219, 39, 119, 0.08) 0px, transparent 50%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 0.6s ease-out 0.1s backwards;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  animation: fadeIn 0.6s ease-out 0.2s backwards;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition-base);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.05);
+}
+
+.feature-icon-primary {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--primary);
+}
+
+.feature-icon-accent {
+  background: rgba(225, 29, 72, 0.08);
+  color: var(--accent);
+}
+
+.feature-icon-success {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--success);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.feature-description {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .hero-buttons {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+}

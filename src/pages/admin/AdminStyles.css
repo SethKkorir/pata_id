@@ -1,0 +1,121 @@
+.admin-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.admin-page-header h1 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    margin: 0;
+}
+
+.admin-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table-container {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.admin-table td {
+    color: #334155;
+    font-size: 0.9375rem;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.pending {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.status-badge.verified {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.claimed {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.status-badge.returned {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.125rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.role-badge.student {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.role-badge.staff {
+    background: #fae8ff;
+    color: #86198f;
+}
+
+.role-badge.security {
+    background: #ecfccb;
+    color: #365314;
+}
+
+.role-badge.admin {
+    background: #ffe4e6;
+    color: #9f1239;
+}

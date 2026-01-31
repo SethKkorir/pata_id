@@ -1,0 +1,51 @@
+.admin-dashboard {
+  padding: 2.5rem 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  margin-bottom: 2.5rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.stats-grid {
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.stat-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.5rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+}
+
+.admin-tabs {
+  gap: 1rem;
+  padding: 0.375rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 2rem;
+}
+
+.admin-tab {
+  padding: 0.875rem;
+  font-size: 0.9375rem;
+}
+
+.admin-content {
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+}

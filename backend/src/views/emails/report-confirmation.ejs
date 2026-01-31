@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Confirmation - PataID</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
+    <div style="background: linear-gradient(to right, #25AAE1, #032540); padding: 20px; text-align: center;">
+        <h1 style="color: white; margin: 0;">PataID</h1>
+        <p style="color: white; opacity: 0.8; margin: 5px 0 0;">Lost & Found ID Platform</p>
+    </div>
+
+    <div style="padding: 30px; background: #f8fafc;">
+        <h2 style="color: #032540;">ID Report Received</h2>
+
+        <p>Hello <%= name %>,</p>
+
+        <p>Thank you for reporting a found ID card. You have successfully helped the community!</p>
+
+        <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;">
+            <p style="margin: 0 0 10px;"><strong>Report Number:</strong> #<%= reportNumber %>
+            </p>
+            <p style="margin: 0 0 10px;"><strong>ID Type:</strong>
+                <%= idType %>
+            </p>
+            <p style="margin: 0 0 10px;"><strong>Name on ID:</strong>
+                <%= fullName %>
+            </p>
+            <p style="margin: 0;"><strong>Campus:</strong>
+                <%= campus %>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="<%= reportUrl %>"
+                style="background: #25AAE1; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
+                View Report
+            </a>
+        </div>
+
+        <p>We have notified the owner (if they are registered) or we will wait for them to search for this ID.</p>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+            <p style="font-size: 14px; color: #64748b;">
+                Please hand over the ID to the nearest security desk if you haven't already.
+            </p>
+        </div>
+    </div>
+
+    <div style="background: #032540; color: white; padding: 20px; text-align: center; font-size: 14px;">
+        <p>&copy; <%= year %> PataID. All rights reserved.</p>
+        <p style="opacity: 0.8;">This is an automated message. Please do not reply to this email.</p>
+    </div>
+</body>
+
+</html>

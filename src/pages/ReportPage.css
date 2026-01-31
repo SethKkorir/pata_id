@@ -1,0 +1,56 @@
+.form-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.report-form {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.file-upload {
+  position: relative;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: rgba(248, 250, 252, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.file-upload-content svg {
+  margin: 0 auto 1rem;
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+}
+
+.privacy-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}

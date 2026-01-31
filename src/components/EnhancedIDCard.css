@@ -1,0 +1,62 @@
+.enhanced-id-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.enhanced-id-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background: rgba(248, 250, 252, 0.5);
+  border-bottom: 1px solid var(--border);
+}
+
+.id-status-badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.id-card-body {
+  padding: 1.25rem;
+}
+
+.id-card-body h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.id-details-expanded {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.id-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: rgba(248, 250, 252, 0.5);
+}
