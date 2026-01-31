@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || '/api';
 
 const getHeaders = () => {
     const user = JSON.parse(localStorage.getItem('pataid_user'));
@@ -14,7 +14,7 @@ const getHeaders = () => {
 // Generic request handler
 const request = async (endpoint, options = {}) => {
     console.log('?? API [' + (options.method || 'GET') + '] ' + endpoint, options.body ? 'with body' : '');
-    
+
     const headers = getHeaders();
     console.log('?? Sending token: ' + (headers['Authorization'] ? headers['Authorization'].substring(0, 20) + '...' : 'None'));
 
